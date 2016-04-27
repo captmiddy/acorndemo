@@ -4,7 +4,7 @@ MAINTAINER "Anthony Moulen <amoulen@g.harvard.edu>"
 RUN useradd -ms /bin/bash acornadm
 ADD http://midnight.moulen.org/tmp/acorn.tar.gz /home
 ADD http://midnight.moulen.org/tmp/acorn.demo.sql.gz /root
-RUN gunzip /root/acorn.demo.sql.gz
+RUN gunzip -q /root/acorn.demo.sql.gz
 RUN cd /home ; tar zxvf acorn.tar.gz
 RUN rm /home/acorn.tar.gz
 RUN sed -i '/mysqladmin/ i mysql -uroot < /root/acorn.demo.sql' /create_mysql_admin_user.sh

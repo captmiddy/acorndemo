@@ -4,8 +4,8 @@ MAINTAINER "Anthony Moulen <amoulen@g.harvard.edu>"
 RUN useradd -ms /bin/bash acornadm
 ADD http://midnight.moulen.org/tmp/acorn.tar.gz /home
 ADD http://midnight.moulen.org/tmp/acorn.demo.sql.gz /root
-RUN ls /root
-RUN ls /home
+RUN head /root/acorn.demo.sql.gz
+RUN ls -al /root
 RUN gunzip -q /root/acorn.demo.sql.gz
 RUN cd /home ; tar zxvf acorn.tar.gz
 RUN rm /home/acorn.tar.gz

@@ -2,7 +2,7 @@ FROM bailey86/ubuntu1404-lamp
 MAINTAINER "Anthony Moulen <amoulen@g.harvard.edu>"
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
-  apt-get -y git build-essential software-properties-common
+  apt-get install -y git build-essential software-properties-common
 RUN \
   echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
   add-apt-repository -y ppa:webupd8team/java && \
